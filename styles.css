@@ -1,0 +1,81 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Global Styles */
+:root {
+    --primary-color: #4a90e2; /* Soft Blue */
+    --secondary-color: #e94e77; /* Soft Pink */
+    --dark-bg: #222; /* Dark Background */
+    --card-bg: #333; /* Card Background */
+    --text-color: #fff; /* White Text */
+    --shadow-color: rgba(0, 0, 0, 0.2);
+}
+
+body {
+    background-color: var(--dark-bg);
+    color: var(--text-color);
+    font-family: 'Roboto', sans-serif; /* Updated Font */
+    margin: 0;
+}
+
+/* Container Styles */
+.container-lg {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* Content Wrapper */
+.content-wrapper {
+    padding: 20px;
+}
+
+/* Card Styles */
+.card {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px var(--shadow-color);
+    padding: 15px;
+    margin: 10px 0;
+}
+
+/* Title and Text Styles */
+.card-title {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    font-weight: 700; /* Bold for titles */
+}
+
+/* Button Styles */
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #3a78c2; /* Darker shade on hover */
+}
+
+/* List Styles */
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Footer Styles */
+.footer {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 0.9em;
+    color: var(--secondary-color);
+}
