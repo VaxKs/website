@@ -6,6 +6,36 @@
     <title>Exiled.wtf</title>
     <link rel="stylesheet" href="styles.css" />
     <link href="https://cdn.jsdelivr.net/gh/hung1001/font-awesome-pro@4cac1a6/css/all.css" rel="stylesheet" />
+    <style>
+        .responsive-image {
+            width: 150px; /* Smaller size for images */
+            cursor: pointer;
+            margin: 10px;
+            transition: transform 0.2s;
+        }
+        
+        .responsive-image:hover {
+            transform: scale(1.05);
+        }
+        
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+        }
+    </style>
 </head>
 <body class="dark-mode">
     <div class="page-wrapper">
@@ -28,17 +58,25 @@
                         <p>We created this menu to be the best and least detectable throughout the community.</p>
                     </div>
                 </div>
+                
+                <!-- Menu Images Section -->
+                <div class="content">
+                    <h3 class="font-weight-lighter">Menu Screenshots</h3>
+                    <img src="image.png" alt="Exiled Menu Screenshot 1" class="responsive-image" onclick="openLightbox(this.src)" />
+                    <img src="image2.png" alt="Exiled Menu Screenshot 2" class="responsive-image" onclick="openLightbox(this.src)" />
+                </div>
+                
                 <div class="content">
                     <a name="editions"></a>
                     <h3 class="font-weight-lighter">Pick Your Flavor</h3>
                 </div>
-                <div class="features-row">
-                    <div class="card">
+                <div class="features-row flavor-row">
+                    <div class="card flavor-card">
                         <h2 class="card-title">Monthly</h2>
                         <p>Subscribe for a monthly fee of <strong>$14.99</strong> to access premium features.</p>
                         <a href="https://discord.gg/YPpyx2TZWH" class="btn btn-primary">SUBSCRIBE NOW</a>
                     </div>
-                    <div class="card">
+                    <div class="card flavor-card">
                         <h2 class="card-title">Lifetime</h2>
                         <p>Make a one-time payment of <strong>$34.99</strong> for lifetime access to all features.</p>
                         <a href="https://discord.gg/YPpyx2TZWH" class="btn btn-primary">BUY LIFETIME</a>
@@ -64,7 +102,7 @@
                             <li>Suicide</li>
                         </ul>
                     </div>
-                </div>                
+                </div>
                 <div class="card">
                     <h2 class="card-title">Miscellaneous</h2>
                     <ul>
@@ -117,5 +155,21 @@
             </footer>
         </div>
     </div>
+
+    <!-- Lightbox for images -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Lightbox Image" />
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            document.getElementById('lightbox-img').src = src;
+            document.getElementById('lightbox').style.display = 'flex';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+    </script>
 </body>
 </html>
